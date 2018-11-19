@@ -32,6 +32,30 @@ class NumberTranslatorTest {
     }
 
     @Test
+    void hundredPartShouldReturnTranslatedGivenNumberWithoutDash() {
+        //GIVEN
+        int number = 40;
+
+        //WHEN
+        String output = NumberTranslator.hundredPart(number);
+
+        //THEN
+        Assertions.assertEquals("forty" , output);
+    }
+
+    @Test
+    void hundredPartShouldReturnTranslatedGivenNumberWithDash() {
+        //GIVEN
+        int number = 44;
+
+        //WHEN
+        String output = NumberTranslator.hundredPart(number);
+
+        //THEN
+        Assertions.assertEquals("forty-four" , output);
+    }
+
+    @Test
     void numberTranslatorShouldReturnZeroWithGivenZero() {
         //GIVEN
         long number = 0;
